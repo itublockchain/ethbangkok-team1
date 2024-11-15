@@ -10,6 +10,9 @@
     "package": "plasmo package"
   },
   "dependencies": {
+    "@passwordless-id/webauthn": "^2.1.2",
+    "@plasmohq/storage": "^1.13.0",
+    "crypto-js": "^4.2.0",
     "plasmo": "0.89.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
