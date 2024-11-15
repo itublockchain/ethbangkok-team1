@@ -26,8 +26,8 @@ export default function IndexPopup () {
       <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
       <button onClick={async () => {
         const credentials = await registerPasskey(name, challange);
-        localStorage.set("public_key", credentials.publicKey);
-        localStorage.set("user_id", credentials.id);
+        await localStorage.set("public_key", credentials[name].publicKey);
+        await localStorage.set("user_id", credentials[name].id);
       }}>Sign Up</button>
       <button onClick={async () => {
         const id = await authenticatePasskey(challange);
