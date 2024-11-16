@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { encryptPassword, decryptPassword } from 'utils/cryptography';
 import { registerPasskey, authenticatePasskey } from "utils/passkey";
 import { randomChallangeGenerator } from "utils/challangeGenerator";
+import { getFatSignature } from "utils/authResponseOrganize";
 
 import { Storage } from "@plasmohq/storage";
 
@@ -33,8 +34,14 @@ export default function IndexPopup () {
         await localStorage.set("user_id", credentials[name].id);
       }}>Sign Up</button>
       <button onClick={async () => {
-        const id = await authenticatePasskey(challange);
-        sessionStorage.set("salt", id); setSalt(id);
+
+
+        const auth = await authenticatePasskey(challange);
+        sessionStorage.set("salt", auth.id); setSalt(auth.id);
+        console.log("Get Fat Signature: ", getFatSignature(auth));
+
+
+
       }}>Log In</button>
       <p>Encrypted: {encryptedPassword}</p>
       <p>Decrypted: {decryptedPassword}</p>

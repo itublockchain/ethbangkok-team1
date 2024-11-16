@@ -16,7 +16,7 @@ export async function registerPasskey (name: string, challenge: string) : Promis
     }}; // will store in localStorage
 }
 
-export async function authenticatePasskey (challenge: string) : Promise<string> {
+export async function authenticatePasskey (challenge: string) {
     const payload = await client.authenticate({
         "challenge": challenge,
         "userVerification": "required",
@@ -24,5 +24,5 @@ export async function authenticatePasskey (challenge: string) : Promise<string> 
         "timeout": 60000 // 1 minute
     });
 
-    return payload.id; // will use as salt, may be stored in sessionStorage
+    return payload;
 }
