@@ -1,4 +1,4 @@
-/*//SPDX-License-Identifier: MIT
+//SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
 import "forge-std/Script.sol";
@@ -10,8 +10,8 @@ contract AccountFactoryScript is Script{
     }
     function run() public{
         vm.startBroadcast();
-        ConstantPasskeyVerifier verifier= new ConstantPasskeyVerifier();
+        new ConstantPasskeyVerifier();
 
         vm.stopBroadcast();
     }
-}*/
+}
