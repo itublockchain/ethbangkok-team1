@@ -2,21 +2,21 @@
 pragma solidity ^0.8.20;
 import {IR1Validator} from "./interfaces/IValidator.sol";
 
+
 contract Account is IR1Validator {
     // Constant public keys for the account
     bytes32[2] private publicKey;
-
-    // Constant private key for the account
-    bytes32 private privateKey;
-
     // Array for passwords
     string[] private passwords;
-
     // Array for all the names
     string[] private names;
 
+    string[] private urls;
+
     // Mapping to check existence of a password to optimize deletion
     mapping(string => bool) private passwordExists;
+
+    mapping(string=>string) private nameToUrl;
 
     // Mapping for the names to passwords
     mapping(string => string) private nameToPassword;
@@ -25,17 +25,17 @@ contract Account is IR1Validator {
     mapping(string => bool) private nameExists;
 
 
-    constructor(bytes32[2] memory _publicKey, bytes32 _privateKey) {
+    constructor(bytes32[2] memory _publicKey) {
         publicKey = _publicKey;
-        privateKey = _privateKey;
     }
 
     function addPassword(
         address _validator,
         bytes32 _signedHash,
         bytes memory _signature,
-        string memory _password, // Change to string
-        string memory _name
+        string memory _password,
+        string memory _name,
+        string memory _url
     ) public {
         require(
             IR1Validator(_validator).validateSignature(
@@ -52,7 +52,9 @@ contract Account is IR1Validator {
         require(bytes(_name).length > 0, "Account: Name cannot be empty");
 
         passwords.push(_password);
+        urls.push(_url);
         nameToPassword[_name] = _password;
+        nameToUrl[_name] = _url;
         names.push(_name);
         passwordExists[_password] = true; // Adjusted to use string
         nameExists[_name] = true;
@@ -184,11 +186,11 @@ contract Account is IR1Validator {
         return passwords;
     }
 
-    function getPrivateKey(
+    function getUrls(
         address _validator,
         bytes32 _signedHash,
         bytes memory _signature
-    ) public view returns (bytes32) {
+    ) public view returns (string[] memory) {
         require(
             IR1Validator(_validator).validateSignature(
                 _signedHash,
@@ -197,7 +199,7 @@ contract Account is IR1Validator {
             ),
             "Account: Cannot validate signature"
         );
-        return privateKey;
+        return urls;
     }
 
     function getNames() public view returns (string[] memory) {

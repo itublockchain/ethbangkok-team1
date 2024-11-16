@@ -3,4 +3,7 @@ src = "src"
 out = "out"
 libs = ["lib"]
 
+linea_rpc_url =" https://linea-sepolia.infura.io/v3/${API_KEY}"
+private_key = "${PRIVATE_KEY}"
+
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
