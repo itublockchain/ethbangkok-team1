@@ -1,4 +1,4 @@
-import {client} from '@passwordless-id/webauthn';
+import { client } from '@passwordless-id/webauthn';
 
 export async function registerPasskey (name: string, challenge: string) : Promise<{[name: string]: {id: string, publicKey: string}}> {
     const payload = await client.register({

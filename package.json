@@ -4,10 +4,5 @@
   "repository": "https://github.com/itublockchain/ethbangkok-team1",
   "author": "itublockchain",
   "license": "MIT",
-  "private": false,
-  "scripts": {
-    "extension-dev": "plasmo dev",
-    "extension-build": "plasmo build",
-    "extension-package": "plasmo package"
-  }
+  "private": false
 }

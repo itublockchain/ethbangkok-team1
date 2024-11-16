@@ -1,14 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { encryptPassword, decryptPassword } from 'utils/cryptography';
 import { registerPasskey, authenticatePasskey } from "utils/passkey";
+import { randomChallangeGenerator } from "utils/challangeGenerator";
 
 import { Storage } from "@plasmohq/storage";
 
 const localStorage = new Storage({area: "local"})
 const sessionStorage = new Storage({area: "session"})
-
-const challange = "eoWTjmUwZQISXPJv_PrRfX6_";
 
 export default function IndexPopup () {
   const [name, setName] = useState("");
@@ -20,6 +19,10 @@ export default function IndexPopup () {
   const [publicKey, setPublicKey] = useState("");
   const [userId, setUserId] = useState("");
   const [salt, setSalt] = useState("");
+
+  const [challange, setChallange] = useState("");
+
+  useEffect(() => {setChallange(randomChallangeGenerator());}, []);
 
   return (
     <div>
@@ -44,6 +47,7 @@ export default function IndexPopup () {
       <button onClick={async () => {setPublicKey(await localStorage.get("public_key"))}}>Fetch pubkey</button>
       <button onClick={async () => {setUserId(await localStorage.get("user_id"))}}>Fetch userId</button>
       <button onClick={async () => {setSalt(await sessionStorage.get("salt"))}}>Fetch salt</button>
+      <p>Challange {challange}</p>
     </div>
   )
 }
