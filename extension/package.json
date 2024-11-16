@@ -12,12 +12,15 @@
   "dependencies": {
     "@passwordless-id/webauthn": "^2.1.2",
     "@plasmohq/storage": "^1.13.0",
+    "asn1.js": "^5.4.1",
     "crypto-js": "^4.2.0",
     "ethers": "^5.7.2",
     "mathjs": "^13.2.2",
     "plasmo": "0.89.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "react-icons-kit": "^2.0.0",
+    "react-router-dom": "^6.28.0"
   },
   "devDependencies": {
     "@ianvs/prettier-plugin-sort-imports": "4.1.1",
