@@ -56,7 +56,7 @@
 //     return {signature, publicKeyBytes32, authenticatorData};
 // }
 
-export function getFatSignature (auth, publicKey) {
+export function getFatSignature (auth:any, publicKey:any) {
 
     return {
         signature: '0xb5140ee4ee3ef37f9d1aafd493ce46a79dad7a22465d2181f02cd796616c424784c439472a9cc0bdfc41e68d1c73a2adcaf938adaf79d6499298f67d720bf70b',
@@ -64,7 +64,7 @@ export function getFatSignature (auth, publicKey) {
           '0x83262a4265009839fd27b751e7197e1e5c800344765d5e6c8104674865db2edf',
           '0xf10ab11d0f5215bef9324e6443d7acbda770b63b83d3674385fd9603d8981354'
         ],
-        authenticatorData: '4fb20856f24a6ae7dafc2781090ac8477ae6e2bd072660236cc614c6fb7c2ea01d00000000'
+        authenticatorData: '0x1234567890abcdef1234567890abcdef1234567890abcdef1234567890abcdef'
       }
       
 }

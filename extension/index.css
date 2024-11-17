@@ -1,0 +1,199 @@
+.manager-container{
+    width:364 ;
+    height:600 ;
+    background-image: url(assets/Login.png);
+    background-size: cover;
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+  }
+  .auth-page {
+    border-radius: 16px; 
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    padding: 40px;
+    text-align: center;
+    width: 150px;
+    height: 206px;
+    margin-top: 200px;
+    border: none;
+  }
+  .auth-title {
+    font-size: 28px;
+    color: #ffffff; /* Beyaz yazı */
+    font-weight: bold;
+    margin-bottom: 32px;
+  }
+  .login-btn {
+    background-color: #ffffff; /* Beyaz arka plan */
+    color: #4caf50; /* Yeşil yazı */
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+  }
+  
+  .create-btn {
+    background-color: #4caf50; /* Yeşil arka plan */
+    color: #ffffff; /* Beyaz yazı */
+    font-size: 16px;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 24px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease;
+  }
+  
+  /* Tüm sayfanın genel düzeni */
+  .pages-container {
+    width:364 ;
+    height:600 ;
+    background-color: #AED5D8; /* Arka plan rengi */
+    display: flex;
+    flex-direction: column; /* Elemanları dikey hizala */
+    align-items: center; /* Yatayda ortala */
+    padding: 20px;
+    overflow-y: auto; /* Dikey kaydırma */
+    box-sizing: border-box;
+  }
+  
+  /* Başlık */
+  .pages-container h1 {
+    font-size: 32px; /* Büyük başlık yazı boyutu */
+    color: #343a40; /* Koyu gri */
+    margin-bottom: 20px; /* Alt boşluk */
+    text-align: center; /* Ortalanmış başlık */
+  }
+  
+  /* Parola listesi konteyneri */
+  .passwords {
+    width: 299px;
+    height: 130px; /* Maksimum genişlik */
+    background-color: #ffffff; /* Beyaz arka plan */
+    border-radius: 12px; /* Köşeleri yuvarla */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+    padding: 20px;
+    overflow: hidden; /* Taşan içeriği gizle */
+  }
+  
+  
+  .my-password {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .my-password li {
+    display: flex; /* Esnek düzen */
+    flex-direction: column; /* Bilgileri dikey hizala */
+    justify-content: space-between; /* Eşit aralık */
+    padding: 16px 12px; /* İç boşluk */
+    border-bottom: 1px solid #dee2e6; /* Alt çizgi */
+    font-size: 14px; /* Yazı boyutu */
+    color: #495057; /* Metin rengi */
+  }
+  
+  .my-password li:last-child {
+    border-bottom: none; /* Son elemana çizgi ekleme */
+  }
+  
+  /* İkon ve tıklanabilir alan */
+  .my-password span {
+    margin-top: 3px; /* Üst boşluk */
+    display: flex; /* Esnek düzen */
+    justify-content: flex-start; /* Sağa hizala */
+    align-items: center;
+    cursor: pointer; /* Tıklanabilir */
+    color: #007bff; /* Mavi ikon rengi */
+  }
+  
+  .my-password span:hover {
+    color: #0056b3; /* Daha koyu mavi hover efekti */
+  }
+  
+  
+  .add-btn {
+    margin-top: 20px; /* Üst boşluk */
+    background-color: #4caf50; /* Yeşil renk */
+    color: #ffffff; /* Beyaz yazı */
+    font-size: 16px; /* Yazı boyutu */
+    font-weight: 600; /* Kalın yazı */
+    border: none; /* Kenar çizgisi yok */
+    border-radius: 8px; /* Köşeleri yuvarla */
+    padding: 12px 24px; /* İç boşluk */
+    cursor: pointer; /* Tıklanabilir */
+    transition: all 0.3s ease; /* Hover animasyonu */
+  }
+  
+  .add-btn:hover {
+    background-color: #388e3c; /* Daha koyu yeşil hover */
+  }
+  
+  .add-btn:active {
+    background-color: #2e7d32; /* Daha koyu aktif yeşil */
+  }
+  
+  /* Header Genel Stili */
+  .main-header {
+    display: flex; /* Flexbox düzeni */
+    justify-content: space-between; /* Logo ve butonu uçlara yerleştir */
+    align-items: center; /* Dikey hizalama */
+    background-color: #AED5D8; /* Beyaz arka plan */
+    width: 100%;
+    padding: 16px 24px; /* İç boşluklar */
+    border: none /* Alt kenar çizgisi */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+  }
+  
+  /* Logo ve Başlık */
+  .logo-container {
+    display: flex;
+    align-items: center; /* Logo ve başlık yatayda hizalanır */
+  }
+  
+  .logo {
+    height: 40px; /* Logo boyutu */
+    width: auto; /* Oranını korur */
+  
+  }
+  
+  .add-btn {
+  
+    color: #ffffff; /* Beyaz yazı rengi */
+    font-size: 16px; /* Yazı boyutu */
+    font-weight: 600; /* Kalın yazı */
+    padding: 12px 24px; /* İç boşluk */
+    border: none; /* Kenar çizgisi yok */
+    border-radius: 8px; /* Köşeleri yuvarlat */
+    cursor: pointer; /* Tıklanabilir */
+    transition: all 0.3s ease; /* Hover animasyonu */
+  }
+  
+  .add-btn:hover {
+    background-color: #388e3c; /* Daha koyu yeşil hover efekti */
+  }
+  
+  .add-btn:active {
+    background-color: #2e7d32; /* Daha koyu aktif yeşil */
+  }
+  
+  .pages-container input{
+    border-radius: 3px;
+    border:#66716E solid 1px;
+    width: 80%;
+    height: 5%;
+    margin: 5px;
+  }
+  
+  .pages-container label{
+    font-size: 15px;
+    text-align: left;
+    font-weight: 200px;
+  }
+  

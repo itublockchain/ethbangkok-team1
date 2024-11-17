@@ -1,7 +1,6 @@
 import { ethers } from 'ethers';
 import { getFatSignature } from "./authResponseOrganize";
 
-import addressContract from '../../backend/out/Account.sol/Account.json';
 import { decryptPassword, encryptPassword } from './cryptography';
 import { takeAccount } from './createAccount';
 

@@ -2,3 +2,5 @@ extension/node_modules
 extension/yarn.lock
 extension/.plasmo
 extension/build
+backend/out
+backend/lib/*/*
